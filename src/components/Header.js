@@ -46,7 +46,6 @@ const Header = () => {
             className={`nav__list ${
               isTabletOrMobile && `${!hamburguerMenu && "off"}`
             }`}
-            onClick={() => changeHamburguerMenu(!hamburguerMenu)}
           >
             <li>
               <a href="#home">HOME</a>
