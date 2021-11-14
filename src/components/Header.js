@@ -78,7 +78,6 @@ const offMenu = keyframes`
   }
   100%{
     opacity:0;
-    display:none;
   }
 `;
 
@@ -165,9 +164,8 @@ const ContainerHeader = styled.header`
       padding: 10px;
     }
     .off {
+      display:none;
       animation: ${offMenu} 0.2s ease forwards;
-    }
-    .false {
     }
   }
 `;
