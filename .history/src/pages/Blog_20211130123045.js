@@ -123,6 +123,9 @@ const ContainerBlog = styled.section`
     margin: 0;
   }
   @media only screen and (max-width: 800px) {
+    .blog__header {
+      padding: 0 10%;
+    }
     .blog__body {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -133,9 +136,6 @@ const ContainerBlog = styled.section`
   @media only screen and (max-width: 600px) {
     & {
       padding: 0 0 60px;
-    }
-    .blog__header {
-      padding: 0 10%;
     }
     .body__article {
       overflow: hidden;

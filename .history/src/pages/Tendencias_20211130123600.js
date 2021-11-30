@@ -83,9 +83,6 @@ const Tendencias = () => {
           {/* Obtengo el array de objetos simulado como base de datos */}
           {tendencias.map((tendencia) => {
             let date = new Date();
-            // Creo el formato del Date en DD/MM/YYYY
-            // de tal manera que al verificar el day del JSON con dateNow
-            // si son iguales, devuelve TRUE, por lo tanto es NUEVO el articulo.
             let dateNow = `${date.getDate()}/${
               date.getMonth() + 1
             }/${date.getFullYear()}`;

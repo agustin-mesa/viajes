@@ -32,7 +32,6 @@ const TenItem = styled.a`
   .tendencia-item__img img {
     display: flex;
     width: 100%;
-    height: 15vh;
   }
   .tendencia-item__img img.red {
     background: red;

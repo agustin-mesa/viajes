@@ -10,7 +10,7 @@ const TendenciaItem = ({ src, nuevo, titulo, descripcion }) => {
   return (
     <TenItem className="tendencia-item" href="#">
       <div className="tendencia-item__img">
-        <img src={src} className={src} alt={titulo} />
+        <img src={src} color={src} alt={titulo} />
       </div>
       <div className="tendencia-item__new">{nuevo && <span>NUEVO</span>}</div>
       <div className="tendencia-item__descrip">
@@ -32,16 +32,9 @@ const TenItem = styled.a`
   .tendencia-item__img img {
     display: flex;
     width: 100%;
-    height: 15vh;
   }
-  .tendencia-item__img img.red {
-    background: red;
-  }
-  .tendencia-item__img img.green {
-    background: green;
-  }
-  .tendencia-item__img img.blue {
-    background: blue;
+  .tendencia-item__img img ${(props) => props.color} {
+    background: ${(props) => props.color};
   }
 
   .tendencia-item__new {

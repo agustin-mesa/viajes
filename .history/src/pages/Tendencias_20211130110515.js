@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // Colors
@@ -9,6 +9,8 @@ import card01 from "../Assets/img/card_01.png";
 import card02 from "../Assets/img/card_02.png";
 import card03 from "../Assets/img/card_03.png";
 
+import tendenciasJson from "./../tendencias.json";
+
 // Importo etiquetas default con estilos propios
 import { H3 } from "../components/styles/stylesDefault";
 
@@ -16,21 +18,16 @@ import { H3 } from "../components/styles/stylesDefault";
 import TendenciaItem from "../components/TendenciaItem";
 
 const Tendencias = () => {
-  const [tendencias, changeTendencias] = useState([]);
+  const [tendencias, changeTendencias] = useState();
 
   const readJson = () => {
-    fetch("./tendencias.json", {
+    fetch(tendenciasJson, {
       method: "GET",
     })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => changeTendencias(data));
+      .then((response) => console(response.json()))
+      .then((data) => console.log(data));
   };
-
-  useEffect(() => {
-    readJson();
-  }, []);
+  readJson();
 
   // Simulo una base de datos para luego imprimir cada CARD.
   // Aunque también se podría hacer manualmente usando el componente
@@ -71,7 +68,6 @@ const Tendencias = () => {
     },
   ];
   */
-  console.log();
 
   return (
     <ContainerTendencias id="tendencias">
@@ -81,24 +77,17 @@ const Tendencias = () => {
         </div>
         <div className="tendencias__body">
           {/* Obtengo el array de objetos simulado como base de datos */}
-          {tendencias.map((tendencia) => {
-            let date = new Date();
-            // Creo el formato del Date en DD/MM/YYYY
-            // de tal manera que al verificar el day del JSON con dateNow
-            // si son iguales, devuelve TRUE, por lo tanto es NUEVO el articulo.
-            let dateNow = `${date.getDate()}/${
-              date.getMonth() + 1
-            }/${date.getFullYear()}`;
+          {/* {tendenciasJson.map((tendencia, i) => {
             return (
               <TendenciaItem
                 src={tendencia.color}
-                nuevo={tendencia.date == dateNow ? true : false}
+                nuevo={tendencia.date == Date.now() ? true : false}
                 titulo={tendencia.title}
                 descripcion={tendencia.description}
                 key={tendencia.id}
               />
             );
-          })}
+          })} */}
         </div>
       </div>
     </ContainerTendencias>

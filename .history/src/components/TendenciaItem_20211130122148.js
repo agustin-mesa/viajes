@@ -10,7 +10,7 @@ const TendenciaItem = ({ src, nuevo, titulo, descripcion }) => {
   return (
     <TenItem className="tendencia-item" href="#">
       <div className="tendencia-item__img">
-        <img src={src} className={src} alt={titulo} />
+        <img src={src} className={`bg-color ` + src} alt={titulo} />
       </div>
       <div className="tendencia-item__new">{nuevo && <span>NUEVO</span>}</div>
       <div className="tendencia-item__descrip">
@@ -30,20 +30,11 @@ const TenItem = styled.a`
   overflow: hidden;
 
   .tendencia-item__img img {
-    display: flex;
     width: 100%;
-    height: 15vh;
   }
-  .tendencia-item__img img.red {
-    background: red;
+  .tendencia-item__img img.bg-color {
+    display: flex;
   }
-  .tendencia-item__img img.green {
-    background: green;
-  }
-  .tendencia-item__img img.blue {
-    background: blue;
-  }
-
   .tendencia-item__new {
     width: 100%;
     position: relative;

@@ -71,7 +71,6 @@ const Tendencias = () => {
     },
   ];
   */
-  console.log();
 
   return (
     <ContainerTendencias id="tendencias">
@@ -81,24 +80,17 @@ const Tendencias = () => {
         </div>
         <div className="tendencias__body">
           {/* Obtengo el array de objetos simulado como base de datos */}
-          {tendencias.map((tendencia) => {
-            let date = new Date();
-            // Creo el formato del Date en DD/MM/YYYY
-            // de tal manera que al verificar el day del JSON con dateNow
-            // si son iguales, devuelve TRUE, por lo tanto es NUEVO el articulo.
-            let dateNow = `${date.getDate()}/${
-              date.getMonth() + 1
-            }/${date.getFullYear()}`;
+          {/* {tendenciasJson.map((tendencia, i) => {
             return (
               <TendenciaItem
                 src={tendencia.color}
-                nuevo={tendencia.date == dateNow ? true : false}
+                nuevo={tendencia.date == Date.now() ? true : false}
                 titulo={tendencia.title}
                 descripcion={tendencia.description}
                 key={tendencia.id}
               />
             );
-          })}
+          })} */}
         </div>
       </div>
     </ContainerTendencias>

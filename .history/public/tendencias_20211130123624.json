@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Montañas y magia",
+        "color": "red",
+        "description": "Description",
+        "date": "30/11/2021"
+    },
+    {
+        "id": 2,
+        "title": "Playas y sol",
+        "color": "green",
+        "description": "Description",
+        "date": "30/07/2020"
+    },
+    {
+        "id": 3,
+        "title": "Nieve y aventura",
+        "color": "blue",
+        "description": "Description",
+        "date": "02/04/2021"
+    }
+]

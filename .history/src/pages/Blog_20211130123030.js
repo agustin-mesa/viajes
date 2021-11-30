@@ -134,9 +134,6 @@ const ContainerBlog = styled.section`
     & {
       padding: 0 0 60px;
     }
-    .blog__header {
-      padding: 0 10%;
-    }
     .body__article {
       overflow: hidden;
     }
